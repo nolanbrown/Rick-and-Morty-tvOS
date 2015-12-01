@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="I5h-ZU-DtG">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="HeX-DW-p5c">
+            <objects>
+                <navigationController id="I5h-ZU-DtG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgm-8T-p1u">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NSa-NF-Ngq" kind="relationship" relationship="rootViewController" id="1e5-dc-1PJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgk-9Y-c5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Ywg-CX-i4H">
+            <objects>
+                <splitViewController id="NSa-NF-Ngq" customClass="RMSplitViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9cQ-IW-cWn"/>
+                    <connections>
+                        <segue destination="O7R-AK-p0T" kind="relationship" relationship="detailViewController" id="RWb-ax-sk6"/>
+                        <segue destination="eE5-Vl-lKp" kind="relationship" relationship="masterViewController" id="Uxu-MQ-J5s"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kb0-rg-eDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Video Detail View Controller-->
+        <scene sceneID="aVR-8i-hTe">
+            <objects>
+                <viewController id="O7R-AK-p0T" customClass="RMVideoDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nbN-Q5-naF"/>
+                        <viewControllerLayoutGuide type="bottom" id="4GB-9m-tQQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ifv-Tn-bSN">
+                        <rect key="frame" x="0.0" y="0.0" width="1285" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MFf-SG-mFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Video Menu Controller-->
+        <scene sceneID="F7d-7K-Oko">
+            <objects>
+                <tableViewController id="eE5-Vl-lKp" customClass="RMVideoMenuController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" id="8yf-Mx-QXe">
+                        <rect key="frame" x="0.0" y="0.0" width="634" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X5g-3J-Vpu">
+                                <rect key="frame" x="0.0" y="199" width="594" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X5g-3J-Vpu" id="3y0-gK-wbh">
+                                    <rect key="frame" x="0.0" y="0.0" width="618" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eE5-Vl-lKp" id="D5k-BJ-Khi"/>
+                            <outlet property="delegate" destination="eE5-Vl-lKp" id="yUE-wf-OHC"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aNm-XN-lZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

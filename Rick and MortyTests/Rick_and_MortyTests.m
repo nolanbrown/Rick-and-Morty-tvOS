@@ -1,0 +1,39 @@
+//
+//  Rick_and_MortyTests.m
+//  Rick and MortyTests
+//
+//  Created by Nolan Brown on 11/26/15.
+//
+//
+
+#import <XCTest/XCTest.h>
+
+@interface Rick_and_MortyTests : XCTestCase
+
+@end
+
+@implementation Rick_and_MortyTests
+
+- (void)setUp {
+    [super setUp];
+    // Put setup code here. This method is called before the invocation of each test method in the class.
+}
+
+- (void)tearDown {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    [super tearDown];
+}
+
+- (void)testExample {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+}
+
+- (void)testPerformanceExample {
+    // This is an example of a performance test case.
+    [self measureBlock:^{
+        // Put the code you want to measure the time of here.
+    }];
+}
+
+@end
