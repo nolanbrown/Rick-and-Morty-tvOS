@@ -183,8 +183,9 @@
     
     
     void (^assetURL)(NSURL *url) = ^void(NSURL *url) {
-        self.streamURL = url;
-        
+        if(!self.streamURL) {
+            self.streamURL = url;
+        }
     };
 
     
@@ -266,7 +267,7 @@
  */
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     
-    if ([parseError code] == NSXMLParserDelegateAbortedParseError) {
+    if ([parseError code] != NSXMLParserDelegateAbortedParseError) {
         if(self.parseURLCompletion) {
             self.parseURLCompletion(nil);
         }

@@ -95,11 +95,14 @@
 - (void)tableView:(UITableView *)tableView didUpdateFocusInContext:(UITableViewFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator {
     
     NSIndexPath *indexPath = context.nextFocusedIndexPath;
-    NSArray *videos = [self.manager getSeason:(indexPath.section + 1)];
-    RMVideo *video = videos[indexPath.row];
-    
-    RMVideoDetailViewController *detail = self.splitViewController.viewControllers[1];
-    [detail setCurrentVideo:video];
+    if(indexPath.row && indexPath.section) {
+        NSArray *videos = [self.manager getSeason:(indexPath.section + 1)];
+        RMVideo *video = videos[indexPath.row];
+        
+        RMVideoDetailViewController *detail = self.splitViewController.viewControllers[1];
+        [detail setCurrentVideo:video];
+    }
+
 }
 
 
